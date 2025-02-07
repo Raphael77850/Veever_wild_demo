@@ -17,8 +17,8 @@ class ChrRepository {
           WHEN MAX(restaurant.type) IS NOT NULL THEN 'restaurant'
         END AS type,
         CASE 
-          WHEN MAX(activity.duration) IS NOT NULL THEN CONCAT('Durée : ', MAX(activity.duration), ' heures')
-          WHEN MAX(hotel.type) IS NOT NULL THEN CONCAT('Type : ', MAX(hotel.type))
+          WHEN MAX(activity.duration) IS NOT NULL THEN CONCAT(MAX(activity.duration))
+          WHEN MAX(hotel.type) IS NOT NULL THEN CONCAT(MAX(hotel.type))
           WHEN MAX(restaurant.type) IS NOT NULL THEN CONCAT(MAX(restaurant.type))
         END AS additional_info,
         COALESCE(
@@ -57,8 +57,8 @@ class ChrRepository {
           WHEN MAX(restaurant.type) IS NOT NULL THEN 'restaurant'
         END AS type,
         CASE 
-          WHEN MAX(activity.duration) IS NOT NULL THEN CONCAT('Durée : ', MAX(activity.duration), ' heures')
-          WHEN MAX(hotel.type) IS NOT NULL THEN CONCAT('Type : ', MAX(hotel.type))
+          WHEN MAX(activity.duration) IS NOT NULL THEN CONCAT(MAX(activity.duration))
+          WHEN MAX(hotel.type) IS NOT NULL THEN CONCAT(MAX(hotel.type))
           WHEN MAX(restaurant.type) IS NOT NULL THEN CONCAT(MAX(restaurant.type))
         END AS additional_info,
         COALESCE(

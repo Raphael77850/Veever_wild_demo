@@ -14,9 +14,11 @@ import Catalog from "./pages/Catalog/Catalog";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import HomePage from "./pages/HomePage/HomePage";
 import Login from "./pages/Login/Login";
+import Provider from "./pages/Provider/Provider";
 import Stay from "./pages/Stay/Stay";
 import VersusPage from "./pages/VersusPage/VersusPage";
 import { chrLoader } from "./services/Loader/LoaderChr";
+import { providerLoader } from "./services/Loader/ProviderLoader";
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
 
@@ -35,6 +37,11 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <GuestRoute element={<FormCreateSignUp />} />,
+      },
+      {
+        path: "/provider/:id",
+        element: <ProtectedRoute element={<Provider />} />,
+        loader: providerLoader,
       },
       {
         path: "/stay",

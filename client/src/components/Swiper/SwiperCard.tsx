@@ -90,7 +90,7 @@ export default function Cardz({ id, name, cards, setCards }: ChrCardsProps) {
             type="button"
             aria-labelledby={cards[currentIndex].type}
           >
-            <Link to="/prestataire">Voir + d'infos</Link>
+            <Link to={`/provider/${id}`}>Voir + d'infos</Link>
           </button>
         </footer>
       </motion.article>

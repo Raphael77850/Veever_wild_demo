@@ -68,7 +68,8 @@
 
   --box-shadow-input-focus: 0 0 0 3px #80bfff;
   --box-shadow-input: 0 2px 2px #f3f6f9;
-  --box-shadow-soft: 0px 2px 7px 1px #00000033;
+  --box-shadow-button: 0 2px 2px #00000033;
+  --box-shadow-soft: 0px 0px 2px 2px #00000033;
 
   --width-input-form: 20rem;
   --width-label-text: 40ch;

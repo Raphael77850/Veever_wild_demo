@@ -6,9 +6,10 @@
   box-sizing: border-box;
 }
 
-#root {
+html {
   background-color: var(--bckgColor);
 }
+
 select,
 button,
 a {

@@ -67,7 +67,7 @@ export default function Versus({
                 ) : null}
               </figcaption>
             </figure>
-            <Link to="/prestataire">+ d'infos</Link>
+            <Link to={`/provider/${card.id}`}>+ d'infos</Link>
           </article>
           <p className="vs">vs</p>
         </Fragment>
