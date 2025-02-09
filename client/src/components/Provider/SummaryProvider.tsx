@@ -1,9 +1,9 @@
-import activityLogo from "../../../public/assets/images/activity.svg";
-import typeLogo from "../../../public/assets/images/ambiance.svg";
-import budgetLogo from "../../../public/assets/images/euro.svg";
-import hotelLogo from "../../../public/assets/images/hotel.svg";
-import locationLogo from "../../../public/assets/images/location.svg";
-import restaurantLogo from "../../../public/assets/images/restaurant.svg";
+import activityLogo from "../../assets/images/activity.svg";
+import typeLogo from "../../assets/images/ambiance.svg";
+import budgetLogo from "../../assets/images/euro.svg";
+import hotelLogo from "../../assets/images/hotel.svg";
+import locationLogo from "../../assets/images/location.svg";
+import restaurantLogo from "../../assets/images/restaurant.svg";
 import PriceDisplay from "../../services/Provider/PriceDisplay";
 import TypeDisplay from "../../services/Provider/TypeDisplay";
 import type { Chr } from "../../types/Provider/ProviderType";
