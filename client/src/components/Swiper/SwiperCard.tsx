@@ -32,9 +32,17 @@ export default function Cardz({ id, name, cards, setCards }: ChrCardsProps) {
             alt={name}
           />
           <figcaption className="tag-container">
-            <p>{cards[currentIndex].type}</p>
+            <p>
+              Type:
+              <br />
+              {cards[currentIndex].type}
+            </p>
             <p>{cards[currentIndex].address}</p>
-            <p>Prix moyen: {cards[currentIndex].average_budget}$</p>
+            <p>
+              Prix moyen:
+              <br />
+              {cards[currentIndex].average_budget}$
+            </p>
           </figcaption>
         </figure>
         <footer className="button-container">
@@ -86,7 +94,7 @@ export default function Cardz({ id, name, cards, setCards }: ChrCardsProps) {
             </svg>
           </button>
           <button
-            className="swiper-btn"
+            className="swiper-btn info-btn"
             type="button"
             aria-labelledby={cards[currentIndex].type}
           >

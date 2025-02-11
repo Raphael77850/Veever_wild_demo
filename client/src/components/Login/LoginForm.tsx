@@ -67,14 +67,18 @@ export default function LoginForm() {
 
   return (
     <form className="loginForm" onSubmit={handleSubmit}>
+      <h2>{"Connexion".toLocaleUpperCase()}</h2>
+      <p>Connectez-vous pour accéder à Veever</p>
       {errorMessage && <p className="error">{errorMessage}</p>}
       <EmailInput email={email} handleEmailChange={handleEmailChange} />
       <PasswordInput
         password={password}
         handlePasswordChange={handlePasswordChange}
       />
-      <button type="submit" disabled={isLoading}>
-        {isLoading ? "Connexion..." : "Se connecter"}
+      <button className="loginCTA" type="submit" disabled={isLoading}>
+        {isLoading
+          ? "Connexion...".toLocaleUpperCase()
+          : "Connexion".toLocaleUpperCase()}
       </button>
     </form>
   );

@@ -2,18 +2,18 @@ import ItineraryCard from "./ItineraryCard.tsx";
 const itineraries = [
   {
     id: 1,
-    title: "Escapade chill",
-    imageSrc: "src/assets/images/AppartHotel.jpg",
+    title: "Séjour en couple",
+    imageSrc: "../assets/images/escape_game.jpg",
   },
   {
     id: 2,
-    title: "Week-end romantique",
-    imageSrc: "src/assets/images/HotelBedroom.jpg",
+    title: "Séjour entre amis",
+    imageSrc: "../assets/images/paintball.jpg",
   },
   {
     id: 3,
     title: "Séjour en famille",
-    imageSrc: "src/assets/images/rock-climbing.jpg",
+    imageSrc: "../assets/images/rock-climbing.jpg",
   },
 ];
 
@@ -24,7 +24,7 @@ const ItinerarySection = () => {
 
   return (
     <section className="itineraries-section">
-      <h2 className="section-title">Nos Itinéraires du Moment</h2>
+      <h2 className="section-title">Itinéraires du moment</h2>
       <article className="cards-container">
         {itineraries.map((item) => (
           <ItineraryCard

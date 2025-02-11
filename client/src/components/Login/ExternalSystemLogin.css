@@ -2,9 +2,10 @@
 
 .socialLogin {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  gap: .25rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  width: 100%;
+  justify-content: space-between;
 
   margin-bottom: 1rem;
 }
@@ -13,13 +14,24 @@
   list-style-type: none;
 }
 
-.socialLogin li button {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: var(--border-ref);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.socialLogin li:first-of-type {
+  text-align: left;
+}
 
-  height: 3rem;
-  width: 4.5rem;
+.socialLogin li:last-of-type {
+  text-align: right;
+}
+
+.socialLogin li button {
+  background: var(--bckgColor-input);
+  border-radius: var(--border-ref);
+  border: none;
+  box-shadow: var(--box-shadow-button);
+
+  height: 2.25rem;
+  width: 7rem;
+}
+
+.socialLogin li button img {
+  height: 1.25rem;
 }

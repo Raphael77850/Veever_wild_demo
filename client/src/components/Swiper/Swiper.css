@@ -16,11 +16,22 @@
 }
 
 .swiper-container {
-  background-color: var(--bckgSecondColor-opacity);
+  background-color: var(--bckgColorOrangeOpacity);
   border-radius: calc(var(--border-ref) * 2.5);
   padding: calc(var(--spacing-ref) * 1.5);
   grid-row: 1;
   grid-column: 1;
+}
+
+.swiper-container h1 {
+  font-family: var(--titleFont);
+  margin: 0.2rem 0 1rem 0;
+}
+
+figcaption.tag-container p {
+  background-color: var(--bckgColorOpacity);
+  padding: 0.3rem;
+  font-weight: 500;
 }
 
 .swiper-card {
@@ -29,7 +40,7 @@
   border-radius: calc(var(--border-ref) * 2);
   border-color: var(--mainColor);
   padding: var(--spacing-ref);
-  height: 85vh;
+  height: 80vh;
 }
 
 .swiper-card p {
@@ -52,24 +63,26 @@
   grid-row: 1;
   grid-column: 1;
 }
+
 .tag-img-container {
   display: grid;
   height: 55vh;
 }
 
 .tag-container {
-  color: var(--aliceBlueColor);
+  color: var(--secondColor);
   display: grid;
   width: 100%;
   height: 50vh;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(5, 1fr);
+  padding: 1rem;
 }
 
 .tag-container p {
   align-content: center;
   padding: var(--spacing-ref);
-  height: auto;
+  margin: 0.3rem;
   border-radius: calc(var(--border-ref) * 0.7);
   font-family: var(--textFont);
   font-size: calc(var(--font-size-ref) * 0.8);
@@ -89,7 +102,7 @@
   align-self: flex-end;
   grid-column-start: 2;
   grid-row-start: 4;
-  height: calc(var(--spacing-ref) * 3);
+  /* height: calc(var(--spacing-ref) * 3); */
 }
 
 .button-container {
@@ -99,8 +112,10 @@
 }
 
 .swiper-btn:last-child {
+  font-family: var(--textFont);
+  background-image: var(--veever-gradient);
+  color: var(--light);
   grid-column: span 2;
-  background: var(--gradientColor);
   border-radius: calc(var(--border-ref) * 2);
   padding: var(--padding-input);
   font-size: var(--font-size-ref);

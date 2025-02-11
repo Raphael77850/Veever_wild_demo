@@ -1,50 +1,34 @@
 @font-face {
-  font-family: "Poppins-Light";
-  src: url(./assets/fonts/Poppins/Poppins-Light.ttf);
-}
-
-@font-face {
-  font-family: "Poppins-Medium";
-  src: url(./assets/fonts/Poppins/Poppins-Medium.ttf);
-}
-
-@font-face {
-  font-family: "Poppins-Regular";
-  src: url(./assets/fonts/Poppins/Poppins-Regular.ttf);
-}
-
-@font-face {
-  font-family: "Acumin";
-  src: url(./assets/fonts/AcuminProExtraCondensedSemibold/font.woff);
+  font-family: "AcuminProExtraCondensedSemibold";
+  src: url("../public/assets/fonts/AcuminVariableConcept.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 :root {
-  --titleFont: "Acumin";
-  --textFont: "Poppins-Regular";
+  --titleFont: "AcuminProExtraCondensedSemibold";
+  --textFont: "Poppins";
 
   --font-size-ref: 1rem;
 
   --font-weight-S: 400;
 
-  --bckgColor: #f8f9fa;
-  --bckgColor-opacity: #f8f9facb;
-  --bckgSecondColor: #ffd6c6ab;
-  --bckgSecondColor-opacity: #ffd6c61c;
-  --mainColor: #fb7a3f;
-  --variantMainColor: #f59d3fe8;
+  --mainColor: #fb793f;
   --secondColor: #4e4a4a;
-  --thirdColor: #f74aa1;
-  --thirdColor-opacity: #f74aa1c5;
-  --gradientColor: linear-gradient(
-    90deg,
-    rgba(247, 74, 161, 1) 13%,
-    rgba(245, 158, 63, 1) 100%
-  );
-  --shadow: #c8c8c8;
-  --aliceBlueColor: #f0f8ff;
+
+  --bckgColor: #f8f9fa;
+  --bckgColorOrange: #ffd6c6;
+  --bckgColorOpacity: #f8f9fa90;
+  --bckgColorOrangeOpacity: #ffd6c690;
+  --veever-light-orange: #f59e3f;
+  --veever-pink: #f74aa1;
+  --veever-gradient: linear-gradient(to right, #f74aa1, #fb793f);
+  --veever-green: #7bb471;
+  --veever-light-green: #eef5ed;
+
   --errorColor: red;
   --color-label: rgba(0, 0, 0, 0.87);
-  --border-color-input-focus: #3399ff;
   --errorColor: rgba(255, 0, 0, 0.753);
   --color-input: #1c2025;
   --bckgColor-input: #fff;

@@ -7,7 +7,7 @@ const ItineraryCard = ({ title, imageSrc, onReserve }: CardProps) => {
       <img src={imageSrc} alt={title} className="card_image" />
       <h3 className="card-title">{title}</h3>
       <button type="button" className="reserve-button" onClick={onReserve}>
-        Réserver
+        Voir plus d'infos
       </button>
     </section>
   );
