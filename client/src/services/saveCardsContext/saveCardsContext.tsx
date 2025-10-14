@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import type {
   ChrCardProps,
   Props,
@@ -10,7 +10,16 @@ const SaveCardsContext = createContext<SaveCardsContextType | undefined>(
 );
 
 export function SaveCardsProvider({ children }: Props) {
-  const [saveCards, setSaveCards] = useState<ChrCardProps[]>([]);
+  const LOCAL_STORAGE_KEY = "savedCards";
+  const [saveCards, setSaveCards] = useState<ChrCardProps[]>(() => {
+    const storedCards = localStorage.getItem(LOCAL_STORAGE_KEY);
+    return storedCards ? JSON.parse(storedCards) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(saveCards));
+  }, [saveCards]);
+
   const addCard = (card: ChrCardProps) => {
     setSaveCards((prevCards) => {
       if (!prevCards.some((c) => c.id === card.id)) {

@@ -1,5 +1,5 @@
 import type { RequestHandler } from "express";
-
+import authServices from "../../services/authServices";
 import type { User } from "../../types/admin/adminTypes";
 import adminRepository from "./adminRepository";
 
@@ -38,9 +38,10 @@ const read: RequestHandler = async (req, res, next) => {
 const edit: RequestHandler = async (req, res, next) => {
   const adminId = Number(req.params.id);
   try {
+    const hashedPassword = await authServices.hashPassword(req.body.password);
     const userData: User = {
       email: req.body.email,
-      password: req.body.password,
+      password: hashedPassword,
       firstname: req.body.firstname,
       lastname: req.body.lastname,
       id: adminId,
@@ -61,9 +62,10 @@ const edit: RequestHandler = async (req, res, next) => {
 // The A of BREAD - Add (Create) operation
 const add: RequestHandler = async (req, res, next) => {
   try {
+    const hashedPassword = await authServices.hashPassword(req.body.password);
     const userData: Omit<User, "id"> = {
       email: req.body.email,
-      password: req.body.password,
+      password: hashedPassword,
       firstname: req.body.firstname,
       lastname: req.body.lastname,
     };

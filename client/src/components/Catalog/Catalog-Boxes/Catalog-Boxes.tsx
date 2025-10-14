@@ -29,7 +29,7 @@ export default function CatalogBoxes({
   const date = new Date();
 
   return (
-    <section>
+    <section className="filter-boxe">
       <p className="date-card">
         Date :{" "}
         {date.toLocaleDateString("fr-FR", {

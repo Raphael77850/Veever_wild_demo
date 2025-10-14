@@ -1,4 +1,7 @@
 @import url("@src/variables.css");
+main.catalog {
+  background-color: var(--bckgColor);
+}
 .catalog-boxes-form {
   margin: 0 auto;
   display: grid;
@@ -71,4 +74,19 @@ input[type="checkbox"] {
 
 .catalog-emoji-checkbox .label {
   font-size: var(--font-size-ref);
+}
+
+section.filter-boxe {
+  background-color: var(--bckgColorOrangeOpacity);
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+section.filter-boxe h1 {
+  font-family: var(--titleFont);
+  color: var(--secondColor);
+  font-size: calc(var(--font-size-ref) * 2.1);
+  font-weight: bold;
+  margin: 1rem 0 0 0;
 }

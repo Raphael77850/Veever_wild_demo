@@ -4,7 +4,6 @@
   display: grid;
   background-color: var(--bckgColorOrangeOpacity);
   border: 0px solid black;
-  box-shadow: var(--box-shadow-soft);
   border-radius: var(--border-ref);
   padding: 2rem;
   justify-items: left;
@@ -35,6 +34,7 @@
   padding: 1.5rem;
   border-radius: 8px;
   margin: 0.5rem 0;
+  box-shadow: var(--box-shadow-softer);
 }
 
 .newsLetter-box .base-Input-root {
@@ -87,7 +87,7 @@ span.material-symbols-outlined {
   color: var(--secondColor);
   text-align: left;
   border-radius: 8px;
-  box-shadow: var(--box-shadow-soft);
+  box-shadow: var(--box-shadow-softer);
   background-color: var(--bckgColor);
   padding: var(--spacing-ref);
   margin: 0.5rem 0;

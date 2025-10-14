@@ -29,6 +29,7 @@ export type ChrCardProps = {
   average_budget: number;
   category: string;
   address: string;
+  additional_info: string | number;
   keywords: string[];
   type: "hotel" | "restaurant" | "activity";
 };
@@ -53,6 +54,7 @@ export type Card = {
   name: string;
   average_budget: number;
   address: string;
+  additional_info: string | number;
   type: "hotel" | "restaurant" | "activity";
 };
 

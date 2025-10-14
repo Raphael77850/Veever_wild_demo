@@ -1,8 +1,19 @@
 export default function HeaderForm() {
   return (
-    <hgroup className="headerForm">
-      <img className="logoForm" src="./src/assets/images/logo.svg" alt="" />
-      <h1>Créer votre Compte pour devenir un Veever</h1>
-    </hgroup>
+    <>
+      <section className="preheader-section">
+        <div className="logobox">
+          <img
+            className="logo"
+            src="public/assets/images/logo.png"
+            alt="logo"
+          />
+        </div>
+      </section>
+      <div className="headerForm">
+        <h1>Créez votre compte</h1>
+        <p>Inscrivez-vous pour accéder à Veever</p>
+      </div>
+    </>
   );
 }

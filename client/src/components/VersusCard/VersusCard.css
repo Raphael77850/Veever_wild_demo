@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--bckgColor);
 }
 
 .versus-container button:last-of-type {
@@ -11,14 +12,29 @@
 }
 
 .versus-title {
+  font-family: var(--titleFont);
+  color: var(--secondColor);
   padding: var(--spacing-ref);
   margin: var(--spacing-ref);
   text-align: center;
-  box-shadow: 1px 1px 5px 2px #61535373;
+  background-color: var(--light);
+  box-shadow: var(--box-shadow-softer);
   border-radius: calc(var(--border-ref) * 2);
   width: 90%;
   font-size: calc(var(--font-size-ref) * 1.5);
 }
+
+button.rewind {
+  background-color: var(--light);
+  color: var(--mainColor);
+  border-radius: 15px;
+  padding: var(--spacing-ref);
+  margin: 0 1rem 1rem 1rem;
+  border: 1px solid var(--mainColor);
+  background-color: var(--bckgColorOrangeOpacity);
+  box-shadow: var(--box-shadow-softer);
+}
+
 .versus-card {
   font-family: var(--textFont);
   width: 90vw;
@@ -26,12 +42,13 @@
   background-color: var(--light);
   border: solid 1px var(--bckgColor);
   border-radius: 15px;
-  box-shadow: -2px -1px 8px 3px var(--shadow);
+  box-shadow: var(--box-shadow-softer);
   padding: var(--spacing-ref);
+  border: 1px solid var(--bckgColorOpacity);
 }
 
 .versus-container p {
-  text-align: center;
+  text-align: left;
 }
 
 .tag-img-versusContainer {
@@ -51,6 +68,7 @@
   align-items: center;
   height: 25vh;
   gap: calc(var(--spacing-ref) * 0.5);
+  color: var(--secondColor);
 }
 
 .tag-img-versusContainer h2 {
@@ -58,16 +76,17 @@
   border-top-right-radius: var(--border-ref);
   border-bottom-right-radius: var(--border-ref);
   grid-column: span 2;
-  background-color: var(--bckgColor-opacity);
-  padding: var(--spacing-ref);
+  padding: 0.5rem;
   margin-top: var(--spacing-ref);
   font-size: clamp(1.3rem, 5vw, 2.5rem);
+  background-color: var(--bckgColorOpacity);
 }
 
 .tag-versus-container p {
   border-radius: var(--border-ref);
-  margin-left: 10px;
-  background-color: var(--bckgColor-opacity);
+  margin: 0 0 0.8rem 0.8rem;
+  padding: 0.5rem;
+  background-color: var(--bckgColorOpacity);
   width: 30vw;
   font-size: clamp(0.8rem, 2vw, 1.8rem);
 }
@@ -77,6 +96,15 @@
   grid-column-start: 3;
   justify-self: end;
   align-self: flex-start;
+  padding: 0.5rem;
+  background-color: var(--bckgColorOpacity);
+  border-radius: 8px;
+  margin: 0.8rem;
+}
+
+.infos {
+  color: var(--secondColor);
+  margin: 0.5rem 0 0 0;
 }
 
 .tag-versus-container p:nth-of-type(1) {
@@ -95,12 +123,14 @@
 }
 
 .versus-card.selected {
-  border: 2px solid #ff6347;
+  border: 1px solid #ff6347;
 }
 
 .versus-card img {
   width: 100%;
   border-radius: calc(var(--border-ref) * 2);
+  height: 28vh;
+  object-fit: cover;
 }
 
 #calque_1 {
@@ -112,14 +142,16 @@
 }
 
 .vs {
+  font-family: var(--titleFont);
   align-content: center;
-  width: 30%;
-  height: 5vh;
+  text-align: center;
+  color: tomato;
+  padding: 1rem 2rem;
   font-size: calc(var(--font-size-ref) * 1.5);
   letter-spacing: var(--spacing-letter-ref);
   margin: calc(var(--spacing-ref) * 1);
-  background-color: var(--variantMainColor);
+  background-color: var(--mainColor);
   border-radius: calc(var(--border-ref) * 2);
-  color: var(--bckgColor);
-  font-weight: 800;
+  color: var(--light);
+  font-weight: bold;
 }

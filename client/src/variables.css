@@ -6,6 +6,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Poppins-Medium";
+  src: url("../public/assets/fonts/Poppins-Medium.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --titleFont: "AcuminProExtraCondensedSemibold";
   --textFont: "Poppins";
@@ -19,7 +26,7 @@
 
   --bckgColor: #f8f9fa;
   --bckgColorOrange: #ffd6c6;
-  --bckgColorOpacity: #f8f9fa90;
+  --bckgColorOpacity: #f8f9fada;
   --bckgColorOrangeOpacity: #ffd6c690;
   --veever-light-orange: #f59e3f;
   --veever-pink: #f74aa1;
@@ -54,6 +61,7 @@
   --box-shadow-input: 0 2px 2px #f3f6f9;
   --box-shadow-button: 0 2px 2px #00000033;
   --box-shadow-soft: 0px 0px 2px 2px #00000033;
+  --box-shadow-softer: 0px 0px 8px 0px #00000033;
 
   --width-input-form: 20rem;
   --width-label-text: 40ch;

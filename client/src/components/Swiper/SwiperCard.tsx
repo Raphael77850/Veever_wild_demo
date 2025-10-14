@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import PriceDisplay from "../../services/Provider/PriceDisplay";
+import TypeDisplay from "../../services/Provider/TypeDisplay";
 import type { ChrCardsProps } from "../../types/Catalog/CatalogTypes";
 import useSwiper from "../Hooks/Swiper/useSwiper";
 
@@ -33,15 +35,15 @@ export default function Cardz({ id, name, cards, setCards }: ChrCardsProps) {
           />
           <figcaption className="tag-container">
             <p>
-              Type:
+              <strong>Type :</strong>
               <br />
-              {cards[currentIndex].type}
+              <TypeDisplay type={cards[currentIndex].type} />
             </p>
             <p>{cards[currentIndex].address}</p>
             <p>
-              Prix moyen:
+              <strong>Prix moyen :</strong>
               <br />
-              {cards[currentIndex].average_budget}$
+              <PriceDisplay price={cards[currentIndex].average_budget} />
             </p>
           </figcaption>
         </figure>

@@ -15,26 +15,60 @@ placeholder {
 .headerForm {
   text-align: center;
   font-family: var(--titleFont);
-  font-size: calc(var(--font-size-ref) * 1.3);
+  font-size: calc(var(--font-size-ref) * 1.2);
   padding: var(--spacing-ref);
 }
 
 .headerForm h1 {
   text-align: center;
-  color: var(--aliceBlueColor);
-  border-radius: var(--border-ref);
-  background: var(--gradientColor-CTA);
+  font-family: var(--titleFont);
+  color: var(--secondColor);
+  font-size: calc(var(--font-size-ref) * 2);
 }
 
-.formGroup {
+form.createForm div.formGroup {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: calc(var(--spacing-ref) * 0.4);
+  padding: 0.3rem 1rem;
+}
+
+form.createForm div.formGroup div.base-Input-root {
+  width: 100%;
+}
+
+form.createForm div.formGroup div.base-Input-root input.base-Input-input {
+  width: 100%;
+  border-radius: 15px;
+  border: 0px;
+  box-shadow: var(--box-shadow-softer);
+}
+
+form.createForm select.css-1umofxt {
+  width: 100%;
+  border-radius: 15px;
+  border: 0px;
+  box-shadow: var(--box-shadow-softer);
+}
+
+form.createForm input.css-19jpywm {
+  width: 100%;
+  border-radius: 15px;
+  border: 0px;
+  box-shadow: var(--box-shadow-softer);
+}
+
+form.createForm div.css-16ghnu3-MuiFormControl-root-MuiTextField-root {
+  width: 100%;
+  border-radius: 15px;
+  border: 0px;
+  box-shadow: var(--box-shadow-softer);
+}
+
+form.createForm label.css-nwsdb5-MuiFormLabel-root {
+  margin: 0 0 1rem 0;
 }
 
 #demo-radio-buttons-group-label {
-  text-align: center;
+  text-align: left;
 }
 
 .checkLabel {
@@ -56,6 +90,12 @@ placeholder {
 .createForm label {
   letter-spacing: var(--spacing-letter-ref);
   font-family: var(--textFont);
+  align-content: flex-start;
+}
+
+form.createForm button.btnAcceptForm {
+  grid-column: span 2;
+  background-image: var(--veever-gradient);
 }
 
 .password-label {
@@ -63,8 +103,6 @@ placeholder {
 }
 
 .checkBox {
-  display: flex;
-  justify-content: center;
   gap: var(--spacing-ref);
   padding: var(--spacing-ref);
 }
@@ -150,8 +188,9 @@ placeholder {
   .checkContact {
     grid-column: span 2;
   }
-  .btnAcceptForm {
+  form.createForm button.btnAcceptForm {
     grid-column: span 2;
+    background-image: var(--veever-gradient);
   }
 
   .checkCGU {

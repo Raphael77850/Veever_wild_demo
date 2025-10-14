@@ -2,10 +2,12 @@
 
 .chr-bottom-section {
   width: 100%;
-  margin: 0 auto;
-  padding: var(--spacing-ref);
-  border: var(--border-input);
-  border-radius: var(--border-ref);
+  text-align: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.chr-bottom-section button {
+  margin: auto;
 }
 
 .type-select {

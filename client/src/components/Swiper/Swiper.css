@@ -3,7 +3,7 @@
 .swiper-header {
   margin: var(--spacing-ref);
   border-radius: calc(var(--border-ref) * 2);
-  box-shadow: var(--box-shadow-soft);
+  box-shadow: var(--box-shadow-softer);
 }
 
 .logo-swiper {
@@ -51,6 +51,7 @@ figcaption.tag-container p {
 .img-swiper {
   width: 100%;
   height: 50vh;
+  object-fit: cover;
   cursor: grab;
   border-radius: calc(var(--border-ref) * 1.2);
   &:active {

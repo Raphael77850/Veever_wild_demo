@@ -7,7 +7,7 @@ function App() {
   const location = useLocation();
 
   const hideNavBar =
-    location.pathname === "/login" || location.pathname === "/createAccount";
+    location.pathname === "/login" || location.pathname === "/signup";
 
   return (
     <SaveCardsProvider>

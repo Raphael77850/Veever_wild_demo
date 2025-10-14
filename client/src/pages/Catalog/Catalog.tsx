@@ -7,7 +7,7 @@ export default function Catalog() {
     useCatalogLogic();
 
   return (
-    <main>
+    <main className="catalog">
       <CatalogBoxes
         filters={filters}
         onFilterChange={handleFilterChange}

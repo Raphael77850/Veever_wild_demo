@@ -6,7 +6,7 @@
   border-radius: 15px;
   padding: 1rem;
   margin: 1rem;
-  box-shadow: 5px 5px 10px var(--bckgcolor);
+  box-shadow: var(--box-shadow-softer);
 }
 .city-select {
   margin: var(--spacing-ref);
@@ -30,4 +30,18 @@
   /* height: calc(var(--spacing-ref) * 6);
   width: calc(var(--spacing-ref) * 6); */
   width: 100%;
+}
+
+button.logout {
+  font-family: var(--textFont);
+  background-color: var(--light);
+  color: var(--secondColor);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  margin: 1rem auto auto 1rem;
+  font-size: var(--spacing-ref);
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: var(--box-shadow-softer);
 }

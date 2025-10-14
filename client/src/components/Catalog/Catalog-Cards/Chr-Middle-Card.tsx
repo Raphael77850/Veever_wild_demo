@@ -1,3 +1,4 @@
+import PriceDisplay from "../../../services/Provider/PriceDisplay";
 import type { CatalogueProps } from "../../../types/Catalog/CatalogTypes";
 import ChrBottomCard from "./Chr-Bottom-Card";
 import "./Chr-Middle-Card.css";
@@ -22,7 +23,9 @@ export default function ChrMiddleCard({ saveCards }: CatalogueProps) {
           />
           <section className="article-chr-middle-card">
             <h2>{card.name}</h2>
-            <p>{card.average_budget}</p>
+            <p>
+              <PriceDisplay price={card.average_budget} />
+            </p>
             <p>{card.address}</p>
           </section>
         </article>

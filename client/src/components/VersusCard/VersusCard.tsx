@@ -3,6 +3,8 @@ import type { Card } from "../../types/Catalog/CatalogTypes";
 import "./VersusCard.css";
 import { Link } from "react-router-dom";
 import { StyledButton } from "../../Styles/StyledButton";
+import PriceDisplay from "../../services/Provider/PriceDisplay";
+import TypeDisplay from "../../services/Provider/TypeDisplay";
 
 type VersusCardProps = {
   versusCards: Card[];
@@ -13,7 +15,7 @@ type VersusCardProps = {
 export default function Versus({
   versusCards,
   handleValidationVersus,
-  handleRewind,
+  // handleRewind,
 }: VersusCardProps) {
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
   if (versusCards.length === 0) {
@@ -26,10 +28,12 @@ export default function Versus({
 
   return (
     <main className="versus-container">
-      <h1 className="versus-title">Choissisez votre {versusCards[0].type}</h1>
-      <button type="button" onClick={handleRewind}>
-        Rewind
-      </button>
+      <h1 className="versus-title">
+        Choissisez votre <TypeDisplay type={versusCards[0].type} />
+      </h1>
+      {/* <button className="rewind" type="button" onClick={handleRewind}>
+        Recharger le VS
+      </button> */}
       {versusCards.map((card) => (
         <Fragment key={card.id}>
           <article
@@ -46,8 +50,21 @@ export default function Versus({
               />
               <figcaption className="tag-versus-container">
                 <h2>{card.name}</h2>
-                <p> Prix moyen: {card.average_budget / 100} euros</p>
-                <p>{card.type}</p>
+                <p>
+                  <strong>Prix moyen :</strong>
+                  <br />
+                  <PriceDisplay price={card.average_budget} />
+                </p>
+                <p>
+                  {card.type === "activity" ? (
+                    <>
+                      {+card.additional_info / 60}
+                      {+card.additional_info / 60 > 1 ? " heures" : " heure"}
+                    </>
+                  ) : (
+                    <>{card.additional_info}</>
+                  )}
+                </p>
                 <p>{card.address}</p>
                 {selectedCard === card.id ? (
                   <svg
@@ -56,7 +73,7 @@ export default function Versus({
                     version="1.1"
                     viewBox="0 0 24 24"
                     width="50"
-                    fill="#f69d41"
+                    fill="#5c8655"
                   >
                     <title>check selection</title>
                     <path
@@ -67,7 +84,9 @@ export default function Versus({
                 ) : null}
               </figcaption>
             </figure>
-            <Link to={`/provider/${card.id}`}>+ d'infos</Link>
+            <Link className="infos" to={`/provider/${card.id}`}>
+              + d'infos
+            </Link>
           </article>
           <p className="vs">vs</p>
         </Fragment>
