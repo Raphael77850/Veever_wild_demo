@@ -10,7 +10,7 @@ const GuestRoute = ({ element }: RouteType) => {
     const checkAuthentification = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/checkToken`,
+          `${import.meta.env.VITE_API_URL}/api/checkToken`,
           {
             method: "GET",
             credentials: "include",
@@ -20,8 +20,11 @@ const GuestRoute = ({ element }: RouteType) => {
         if (response.ok) {
           setIsAuthenticate(true);
         }
+        // Si la réponse n'est pas ok (401, etc.), l'utilisateur n'est pas authentifié
+        // C'est un comportement normal, pas une erreur
       } catch (error) {
-        throw new Error();
+        // Erreur réseau uniquement (serveur down, etc.)
+        console.error("Erreur de connexion au serveur:", error);
       } finally {
         setLoading(false);
       }

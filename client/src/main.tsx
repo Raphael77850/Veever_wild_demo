@@ -29,43 +29,50 @@ import { providerLoader } from "./services/Loader/ProviderLoader";
 
 // Create router configuration with routes
 // You can add more routes as you build out your app!
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      element: <App />,
+      children: [
+        { path: "/login", element: <GuestRoute element={<Login />} /> },
+        {
+          path: "/signup",
+          element: <GuestRoute element={<FormCreateSignUp />} />,
+        },
+        {
+          path: "/provider/:id",
+          element: <ProtectedRoute element={<Provider />} />,
+          loader: providerLoader,
+        },
+        {
+          path: "/stay",
+          element: <ProtectedRoute element={<Stay />} />,
+        },
+        { path: "/", element: <ProtectedRoute element={<HomePage />} /> },
+        { path: "/catalog", element: <ProtectedRoute element={<Catalog />} /> },
+        {
+          path: "/search",
+          loader: chrLoader,
+          element: <ProtectedRoute element={<Swiper />} />,
+        },
+        {
+          path: "/settings",
+          element: <ProtectedRoute element={<VersusPage />} />,
+        },
+        {
+          path: "/dashboard",
+          element: <AdminRoute element={<Dashboard />} />,
+        },
+      ],
+    },
+    // Try adding a new route! For example, "/about" with an About component
+  ],
   {
-    element: <App />,
-    children: [
-      { path: "/login", element: <GuestRoute element={<Login />} /> },
-      {
-        path: "/signup",
-        element: <GuestRoute element={<FormCreateSignUp />} />,
-      },
-      {
-        path: "/provider/:id",
-        element: <ProtectedRoute element={<Provider />} />,
-        loader: providerLoader,
-      },
-      {
-        path: "/stay",
-        element: <ProtectedRoute element={<Stay />} />,
-      },
-      { path: "/", element: <ProtectedRoute element={<HomePage />} /> },
-      { path: "/catalog", element: <ProtectedRoute element={<Catalog />} /> },
-      {
-        path: "/search",
-        loader: chrLoader,
-        element: <ProtectedRoute element={<Swiper />} />,
-      },
-      {
-        path: "/settings",
-        element: <ProtectedRoute element={<VersusPage />} />,
-      },
-      {
-        path: "/dashboard",
-        element: <AdminRoute element={<Dashboard />} />,
-      },
-    ],
+    future: {
+      v7_relativeSplatPath: true,
+    },
   },
-  // Try adding a new route! For example, "/about" with an About component
-]);
+);
 
 /* ************************************************************************* */
 

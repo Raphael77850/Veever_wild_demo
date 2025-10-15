@@ -22,12 +22,15 @@ export default function LoginForm() {
     setErrorMessage(null);
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify({ email, password }),
-        credentials: "include",
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/login`,
+        {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify({ email, password }),
+          credentials: "include",
+        },
+      );
 
       if (!response.ok) {
         const errorData = await response.json();

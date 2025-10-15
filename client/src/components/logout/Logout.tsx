@@ -1,6 +1,6 @@
 export default function Logout() {
   const handleLogout = () => {
-    fetch(`${import.meta.env.VITE_API_URL}/logout`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/logout`, {
       method: "POST",
       credentials: "include",
     })

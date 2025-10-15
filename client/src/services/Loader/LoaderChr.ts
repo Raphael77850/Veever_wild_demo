@@ -1,5 +1,5 @@
 export const chrLoader = async () => {
-  const res = await fetch(`${import.meta.env.VITE_API_URL}/chr`, {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/api/chr`, {
     method: "GET",
     credentials: "include",
   });

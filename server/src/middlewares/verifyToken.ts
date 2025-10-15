@@ -14,7 +14,8 @@ const verifyToken: RequestHandler = (req, res, next) => {
   console.info("cookies reçus :", req.cookies.token);
   const token = req.cookies.token || req.headers.authorization?.split(" ")[1];
   if (!token) {
-    throw new Error("Accès non autorisé, token manquant.");
+    res.status(401).json({ message: "Accès non autorisé, token manquant." });
+    return;
   }
 
   try {
@@ -22,7 +23,7 @@ const verifyToken: RequestHandler = (req, res, next) => {
     req.user = { id: decoded.id, role: decoded.role };
     next();
   } catch (error) {
-    next(error);
+    res.status(401).json({ message: "Token invalide ou expiré." });
   }
 };
 
