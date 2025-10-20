@@ -135,8 +135,23 @@ const logErrors: ErrorRequestHandler = (err, req, res, next) => {
   next(err);
 };
 
+// Define a middleware function to handle errors and send JSON response
+const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
+  // Set the status code (default to 500 if not set)
+  const statusCode = res.statusCode !== 200 ? res.statusCode : 500;
+
+  // Send JSON error response
+  res.status(statusCode).json({
+    message: err.message || "Une erreur est survenue",
+    error: process.env.NODE_ENV === "production" ? {} : err.stack,
+  });
+};
+
 // Mount the logErrors middleware globally
 app.use(logErrors);
+
+// Mount the errorHandler middleware globally
+app.use(errorHandler);
 
 /* ************************************************************************* */
 

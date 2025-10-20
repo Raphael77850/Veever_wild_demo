@@ -42,7 +42,36 @@ export default function FormCreateSignUp() {
       setShowSnackbar(true);
       return;
     }
+
+    // Validation des champs obligatoires
+    if (!formData.nickname || !formData.lastname || !formData.firstname) {
+      alert("Veuillez remplir tous les champs obligatoires");
+      return;
+    }
+
+    if (!formData.gender_id || formData.gender_id === 0) {
+      alert("Veuillez sélectionner votre genre");
+      return;
+    }
+
+    if (!formData.birthdate) {
+      alert("Veuillez sélectionner votre date de naissance");
+      return;
+    }
+
     try {
+      // Préparer les données avec les bons types
+      const clientData = {
+        nickname: formData.nickname.trim(),
+        lastname: formData.lastname.trim(),
+        firstname: formData.firstname.trim(),
+        email: email.trim(),
+        password,
+        gender_id: Number(formData.gender_id),
+        birthdate: formData.birthdate,
+        phoneNumber: formData.phoneNumber?.trim() || undefined,
+      };
+
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/api/clients`,
         {
@@ -50,21 +79,24 @@ export default function FormCreateSignUp() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ ...formData, email, password }),
+          body: JSON.stringify(clientData),
         },
       );
 
-      const data = await response.json();
-
-      if (response.ok) {
-        console.info("Compte créé avec succès:", data);
-      } else {
-        console.error("Erreur lors de la création du compte:", data.message);
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("Erreur serveur:", errorText);
+        throw new Error(`Erreur ${response.status}: ${errorText}`);
       }
+
+      const data = await response.json();
+      console.info("Compte créé avec succès:", data);
+      navigate("/login");
     } catch (error) {
       console.error("Erreur réseau:", error);
+      // Afficher un message d'erreur à l'utilisateur
+      alert("Erreur lors de la création du compte. Vérifiez les informations.");
     }
-    navigate("/login");
   };
 
   return (

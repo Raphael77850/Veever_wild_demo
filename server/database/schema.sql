@@ -20,6 +20,12 @@ CREATE TABLE gender (
   type varchar(255) not null
 );
 
+-- Insert default genders
+INSERT INTO gender (type) VALUES 
+('Femme'),
+('Homme'),
+('Autre');
+
 CREATE TABLE client (
   id int unsigned primary key auto_increment not null,
   user_id int unsigned not null,
@@ -34,7 +40,7 @@ CREATE TABLE client (
 
 CREATE TABLE phone (
   id int unsigned auto_increment primary key not null,
-  phone_number varchar(10),
+  phone_number varchar(20),
   client_id int unsigned not null,
   foreign key(client_id) references client(id)
   ON DELETE CASCADE

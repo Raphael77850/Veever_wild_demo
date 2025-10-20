@@ -4,7 +4,10 @@ import { StyledDatePicker } from "../../../Styles/StyledDatePickers";
 import type { FormInput } from "../../../types/FormInput/FormInput";
 
 export default function InputDate({ handleChange, value }: FormInput) {
-  const today = new Date().toISOString();
+  // Calculer une date par défaut : il y a 18 ans
+  const defaultDate = new Date();
+  defaultDate.setFullYear(defaultDate.getFullYear() - 18);
+
   return (
     <FormControl className="formGroup">
       <FormLabel htmlFor="birthday">Votre date de naissance</FormLabel>
@@ -19,7 +22,7 @@ export default function InputDate({ handleChange, value }: FormInput) {
         dropdownMode="select"
         showIcon
         toggleCalendarOnIconClick
-        selected={value ? new Date(value) : new Date(today)}
+        selected={value ? new Date(value) : defaultDate}
         onChange={(date: Date | null) =>
           handleChange(date ? date.toISOString().split("T")[0] : "")
         }

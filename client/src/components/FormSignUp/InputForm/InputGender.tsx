@@ -10,7 +10,12 @@ type Gender = {
 };
 
 export default function InputGender({ handleChange, value }: FormInput) {
-  const [genders, setGenders] = useState<Gender[]>([]);
+  const [genders, setGenders] = useState<Gender[]>([
+    { id: 1, type: "Femme" },
+    { id: 2, type: "Homme" },
+    { id: 3, type: "Autre" },
+  ]);
+
   useEffect(() => {
     const fetchGenders = async () => {
       try {
@@ -21,7 +26,14 @@ export default function InputGender({ handleChange, value }: FormInput) {
           throw new Error("Erreur lors de la récupération de donnée");
         }
         const data = await response.json();
-        setGenders(data);
+        // Ajoute les genres récupérés à la liste existante sans doublons
+        setGenders((prev) => {
+          const existingTypes = prev.map((g) => g.type);
+          const newGenders = data.filter(
+            (g: Gender) => !existingTypes.includes(g.type),
+          );
+          return [...prev, ...newGenders];
+        });
       } catch (error) {
         console.error("Erreur lors du fetch: ", error);
       }
@@ -29,6 +41,7 @@ export default function InputGender({ handleChange, value }: FormInput) {
 
     fetchGenders();
   }, []);
+
   return (
     <FormControl className="formGroup">
       <FormLabel htmlFor="gender">Votre genre</FormLabel>
